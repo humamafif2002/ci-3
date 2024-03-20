@@ -42,7 +42,7 @@ class Mahasiswa extends CI_Controller
   public function hapus($id)
   {
     $this->Mahasiswa_model->hapusDataMahasiswa($id);
-    $this->session->set_flashdata('hapus', 'DiHapus');
+    $this->session->set_flashdata('flash', 'DiHapus');
     redirect('mahasiswa/index');
   }
 
@@ -69,7 +69,7 @@ class Mahasiswa extends CI_Controller
         $this->load->view('templates/footer');
       } else {
         $this->Mahasiswa_model->ubahDataMahasiswa($id);
-        $this->session->set_flashdata('ubah', 'Diubah');
+        $this->session->set_flashdata('flash', 'Diubah');
         redirect('mahasiswa/index');
       }
     }
